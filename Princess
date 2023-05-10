@@ -1,0 +1,75 @@
+boxing = 0
+whresling  = 0
+kickboxing = 0 
+jujistu = 0 
+karati = 0
+
+#question 1
+print("do you want to practice striking?, Yes, No") 
+answer = input()
+if answer == 'Y':
+    boxing+=4
+    kickboxing+=2
+    karati+=1
+elif answer == 'N':
+    whresling+=1
+    jujistu+=1 
+
+#question 2 
+print("do you want to practice kicking?, Yes, No")
+answer = input()
+if answer == 'N':
+    boxing+=1
+    whresling+=1
+    jujistu+=1
+elif answer == 'y':
+    kickboxing+=4 
+    karati+=2
+
+#question 3
+print("do you want to learn a poiint based sport?, Yes, No")
+answer = input()
+if answer == 'N':
+    boxing+=1
+    whresling+=1
+    kickboxing+=1
+    jujistu+=1 
+elif answer == 'Y':
+    karati+=4
+
+#question 4
+print("do you want to be able to fight on the ground?, Yes, No")
+answer = input()
+if answer == 'N':
+    boxing+=1
+    kickboxing+=1
+    karati+=1
+elif answer == 'Y':
+    whresling+=1
+    jujistu+=1
+
+#question 5
+print("do you want to be able to slip punches?, Yes, No")
+answer = input()
+if answer == 'Y':
+    boxing+=1
+    kickboxing+=1
+elif answer == 'N':
+    whresling+=1
+    jujistu+=1 
+    karati+=1
+
+if boxing > whresling and boxing > kickboxing and boxing > jujistu and boxing > karati: 
+    print("you should do boxing.") 
+
+if whresling > boxing and whresling > kickboxing and whresling> jujistu and whresling > karati: 
+    print("you should do whresling.") 
+
+if kickboxing > boxing and kickboxing > whresling and kickboxing> jujistu and kickboxing > karati: 
+    print("you should do kickboxing.") 
+
+if jujistu > boxing and jujistu > whresling and jujistu > whresling and jujistu > karati: 
+    print("you should do jujistu.") 
+
+if karati > boxing and karati > whresling and karati > whresling and karati > jujistu: 
+    print("you should do karati.") 

@@ -1,0 +1,38 @@
+#pygame hearts
+#gets you started to draw a valentine's day card
+
+import pygame #gaming module (aka library) 
+pygame.init() #initializes Pygame
+pygame.display.set_caption("Valentine's day card") #sets the window title
+screen = pygame.display.set_mode((800, 800)) #creates game screen
+font = pygame.font.Font('freesansbold.ttf', 32) #load font
+img = pygame.image.load("dog.jpg") #make sure this is saved to the same folder as your code
+
+
+#first Heart
+pygame.draw.circle(screen, (150,0,0), (180, 200), 20) #top left circle
+pygame.draw.circle(screen, (150,0,0), (220, 200), 20) #top right circle
+pygame.draw.polygon(screen, (150,0,0), ((160, 205),(239, 205), (200, 250))) #triangle to form base
+
+pygame.draw.circle(screen, (250,0,0), (280, 200), 20) #top left circle
+pygame.draw.circle(screen, (250,0,0), (320, 200), 20) #top right circle
+pygame.draw.polygon(screen, (250,0,0), ((260, 205),(339, 205), (300, 250))) #triangle to form base
+
+pygame.draw.circle(screen, (250,100,0), (280, 300), 20) #top left circle
+pygame.draw.circle(screen, (250,100,0), (320, 300), 20) #top right circle
+pygame.draw.polygon(screen, (250,100,0), ((260, 305),(339, 305), (300, 350))) #triangle to form base
+
+#text
+text1 = font.render('I Love You!', True, (250, 100, 100)) #numbers give color
+text2 = font.render('Happy Valentines Day', True, (250, 0, 0), (200,150,150)) #this one includes background color
+text3 = font.render('Will you be my Valintiine!', True, (250, 100, 100)) #number give color 
+text4 = font.render('I made this card for you', True, (250, 0, 0)) #number give color 
+screen.blit(text1, (200, 100)) #numbers give position
+screen.blit(text2, (400, 300))
+screen.blit(text3, (400, 200))
+screen.blit(text4, (400, 100))
+#image
+screen.blit(img, (0, 400))#draw pic
+
+pygame.display.flip() #this flips all those shapes onto the game screen (needed for every game)
+pygame.time.wait(5000) #pause so screen stays up (no game loop)

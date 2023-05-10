@@ -1,0 +1,44 @@
+room = 1
+choice = "potatoes"
+print("welcome to the text based game!")
+
+while choice != "quit": #game Loop 
+    if room == 1: 
+        choice = input("you are in room 1. you can go South.")
+        if choice == "South":
+            room = 2
+        else:
+            print("i don't understand that.")
+    elif room == 2:  
+        choice = input("you are in room 2. you can go South, North or East.")
+        if choice == "South":
+            room = 3 
+        if choice == "East":
+            room = 4
+        if choice == "North": 
+            room = 1
+        else:
+            print("i dont understand that.")
+
+    elif room == 3:
+        choice = input("you are in room 3. you can go north.")
+        if choice == "north":
+            room = 2
+        else:
+            print ("i dont understand that")
+
+    elif room == 4:
+        choice = input("you are in room 4. you can go west.")
+        if choice == "west":
+            room = 2
+        else:
+            print ("i dont understand")
+
+#end of game loop 
+print("thanks for playing. goodbye")
+
+
+
+
+
+

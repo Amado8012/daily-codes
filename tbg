@@ -1,0 +1,19 @@
+import random
+def roomGen():
+   return(random.randint(2,6))
+def roomDescription(room):
+    if room == 2:
+        #crew cabin
+        print("You are in a crew cabin. You see several bunk beds on both sides of the room, neatly made with tighly tucked-in wool blankets. A folding table with several chairs sits in the middle of the room, covered with cards, empty cups, and bubblegum wrappers. It appears that nobody has been in this room for quite some time")
+    elif room == 3:
+        #engine room
+        print("You are in the engine room. The ship's huge engine lies at the back of the room, creaking and vibrating. To the left lies machine parts and tools.")
+    elif room == 4:
+        #storage
+        print("You are in the ships storage. You surrounded by towering shelves filled with various supplies, rations, and tools. A large pile of crates lies in the back-left corner of the room.")
+    elif room == 5:
+        #kitchen or galley
+        print("You are in the kitchen. you see pots and pans that are left over from last knights dinner.")
+for i in range(10):
+    room = roomGen()
+    roomDescription(room)

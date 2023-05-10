@@ -1,0 +1,19 @@
+#function definition
+def DaysLeftForSeniors(month, day):
+     if month == 5:
+        return 12-day
+     if month == 4: 
+        return 30-day+12 
+     if month == 3:
+        return 31-day+30+12
+     if month == 2:
+        return 28-day+31+30+12 
+     
+
+#-----------------------------------------main program starts here
+#function call
+
+print("Find out how many days are left!")
+m=int(input("Enter the month number we are today"))
+d=int(input("Enter the day number we are today"))
+print("Seniors have", DaysLeftForSeniors(m, d), "schoool days left of high school") 

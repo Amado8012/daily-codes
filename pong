@@ -1,0 +1,113 @@
+# import the pygame library and initilise the game engine 
+import pygame
+pygame.init()
+#open a new windo, caption it "pong"
+screen = pygame.display.set_mode((700,500))
+pygame.display.set_caption("pong")
+p1score = 0
+p2score = 0
+
+#here's the varable that runs our game loop
+doExit = False 
+
+#the clock will be used to control how fast the screen updates
+clock = pygame.time.Clock()
+#variables to hold paddle position
+#these go above game loop
+plx = 20
+ply = 200 
+
+#variables to hold paddle position
+#these go above game loop
+plx = 20
+ply = 200 
+
+#variables to hold paddle position
+#these go above game loop
+p2x = 660
+p2y = 200 
+
+#ball variables 
+bx = 350 #xposition
+by = 250 #ypostion 
+bVx = 4 #x velocity (horizontal speed)
+bVy = 5 #y velocity (vertical speed)
+
+while not doExit: #game loop 
+    
+  
+
+    # event queue stuf
+    clock.tick(60) #set the FPS 
+
+    for event in  pygame.event.get(): #check if user did something 
+        if event.type == pygame.QUIT: #check if user clicked close 
+            doExit = True #lag that we are done so we exit game loop 
+
+    #game logic will go here  
+    #game logic 
+    keys =pygame.key.get_pressed()
+    if keys[pygame.K_w]:
+        ply-=5
+    if keys[pygame.K_s]:
+        ply+=5
+
+     #game logic 
+    keys =pygame.key.get_pressed()
+    if keys[pygame.K_UP]:
+        p2y-=5
+    if keys[pygame.K_DOWN]:
+        p2y+=5
+
+    #reflect ball off side wall of screen
+    if bx < 0  : 
+        bVx *= -1
+
+    if bx + 20 > 700:
+         bVx *= -1
+
+    #reflect ball off top wall of screen
+    if by < 0 or by + 20 > 500: 
+        bVy *= -1
+
+    #ball-paddle reflection
+    if bx < plx + 20 and by + 20 > ply and by < ply + 100:
+        bVx *= -1
+
+    #ball-paddle reflection
+    if bx +20> p2x and by + 20 > p2y and by < p2y + 100:
+        bVx *= -1
+
+     #ball movement 
+    bx += bVx 
+    by += bVy
+
+     #render section will go here 
+    #render section
+    screen.fill((0,0,0)) #wipe dcreen blank
+
+    #draw a line down the middle 
+    pygame.draw.line(screen, (255, 255, 255), [349, 0], [349, 500], 5)
+
+    #draw a rectaingle 
+    pygame.draw.rect(screen, (255, 255, 255), (plx, ply, 20, 100), 1)
+
+    #draw a rectaingle 
+    pygame.draw.rect(screen, (255, 255, 255), (p2x, p2y, 20, 100), 1)
+
+    #draw a rectaingle 
+    pygame.draw.rect(screen, (255, 255, 255), (bx, by, 20, 20), 2)
+    
+    #display scores
+    font = pygame.font.Font(None, 74) #use default font
+    text = font.render(str(p1score), 1, (255, 255, 255))
+    screen.blit(text, (250,10))
+    text = font.render(str(p2score), 1, (255, 255, 255))
+    screen.blit(text, (420,10))
+
+
+    #update the screen
+    pygame.display.flip()
+
+#END GAME LOOP 
+pygame.quit()#when game is done close pygame 

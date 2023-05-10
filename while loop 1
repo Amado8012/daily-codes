@@ -1,0 +1,24 @@
+#a loop that prings the numbers 40-20 countind down by 2s 
+num = 40 
+while num >=20:
+    print(num, end = " ")
+    num-=2 
+print()#skips a line between loops 
+
+#a loop that prints out the numbers from 2-2048 by multiples of 2
+num = 2
+while num <=2048:
+    print(num, end = "")
+    num*=2
+print()#skips a line between loops
+
+#a loop that prints "FROGS" to the screen untill the user types "turtle", at which point it says, "ok fine have a turtle"
+choice = "fish"
+while choice != "turtle":
+    
+    choice = input("FROGS")
+
+print("ok fine have a turtle")
+
+
+

@@ -1,0 +1,17 @@
+choice = input("Do you like legend of zelda ?: ")
+if choice == "yes":
+    print ( "It's too dangerous to go alone, take this !")
+elif choice == "no":
+    print(".........")
+else:
+    print("Its a yes or no question :(")
+
+
+
+age = int (input("please enter your age: "))
+if age < 13:
+    print("you are too young to play this game")
+elif age >= 13 and age < 18:
+    print ("you need parental permission to play this game")
+elif age >= 18:
+    print ("welcome to the game")
